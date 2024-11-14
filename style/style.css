@@ -4,9 +4,9 @@
 
 *{
     margin: 0;
-    padding: 0;
+    padding: 0; 
 }
-
+ 
 body{
     font-family: "Inter", sans-serif;
 }
@@ -29,4 +29,5 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
 }
