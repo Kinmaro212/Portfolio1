@@ -31,3 +31,11 @@ body{
     transform: translate(-50%, -50%);
     color: white;
 }
+.panier-vide {
+    background-color: #f0f0f0; /* Couleur de fond personnalisée */
+    color: #333; /* Couleur du texte */
+}
+.uk-card-secondary {
+    background-color: #f0f0f0; /* Couleur de fond personnalisée */
+    color: #b01111; /* Couleur du texte */
+}
