@@ -154,6 +154,7 @@ h2 {
     position: relative;
     margin: 10px; /* Espacement entre les réalisations */
     overflow: hidden; /* Empêche tout débordement du titre */
+      background-color: #000; /* Fond noir pour le conteneur des images */
 }
 
 .realisation a {
@@ -167,8 +168,8 @@ h2 {
 
 .realisation img {
     width: 100%; /* L'image occupe toute la largeur du conteneur */
-    height: 100%; /* Remplir tout le conteneur en hauteur */
-    object-fit: cover; /* Couvre entièrement l'espace sans déformation */
+    height: 100%; /* Remplit tout le conteneur en hauteur */
+    object-fit: contain; /* Affiche l'image en entier sans la couper */
     filter: brightness(30%);
     transition: transform 0.3s ease, filter 0.3s ease; /* Effet de transformation et filtre au survol */
 }
@@ -177,6 +178,7 @@ h2 {
     transform: scale(1.05); /* Agrandissement léger au survol */
     filter: brightness(50%); /* Effet de luminosité au survol */
 }
+
 
 .realisation h3 {
     position: absolute;
@@ -192,3 +194,63 @@ h2 {
     box-sizing: border-box; /* Assure que le padding ne déborde pas */
 }
 
+/* État initial : caché avec une transformation */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px); /* Décalage vertical par défaut */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* État visible : en place */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation spécifique pour les images */
+.hidden-image {
+    transform: scale(0.8); /* Réduction initiale */
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.visible-image {
+    transform: scale(1); /* Taille normale */
+    opacity: 1;
+}
+
+/* Animation pour le background (slider) */
+.hidden-background {
+    transform: translateY(-50px); /* Décalage vers le haut */
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.visible-background {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* État initial : caché avec transformation */
+.hidden-skill {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* État visible : visible et avec une animation basée sur la taille */
+.visible-skill {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Effet personnalisé pour les grandes images */
+.large-image {
+    transform: rotate(10deg) scale(1.1); /* Légère rotation et agrandissement */
+}
+
+/* Effet personnalisé pour les petites images */
+.small-image {
+    transform: translateY(-10px) scale(1); /* Décalage léger vers le haut */
+}
